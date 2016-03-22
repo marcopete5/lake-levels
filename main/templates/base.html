@@ -1,0 +1,50 @@
+{% extends "all_lakes.html" %}
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+
+	<link rel="stylesheet" type="text/css" href="{% static 'base.css' %} ">
+
+</head>
+<body>
+
+		
+		{% block conditions %}
+	
+	<div id="box">
+ 		<div id="conditions-widget-3" class="widget parkConditions" style="background:url( {% static 'lake.jpg' %} );">
+ 			
+ 			<div class="conditionsResults" data-lat="41.9638" data-lng="-111.3985">
+
+				<div class="feeditem tempCur">
+					<h3 id='title'>Current Conditions </h3> <p id='weather'>{{ weather }}</p>
+				</div>
+
+ 				<div class="feeditem tempMin row">
+ 					<span id="min" class='col-sm-1 pos '><u>Low</u></span>  
+ 					<span id="max" class='col-sm-1 pos '><u>High</u></span> 
+ 					<span id='temp' class='col-sm-2 pos '><u>Water Temp</u></span> 
+ 					<span id='level' class='col-sm-2 pos '><u>Water Level</u></span>
+ 					<span class='col-sm-3  ice pos'><u>Ice Conditions / Thickness</u></span>
+ 				</div>
+
+ 				<div class="feeditem tempMax row" style="margin-left:0px;">
+ 					<span id="min" class='col-sm-1 '> {{ min_temp }}</span>
+ 				    <span id="max" class='col-sm-1'> {{ max_temp }}</span> 
+ 				    <span id='temp' class='col-sm-2'>{{ water_level }}</span> 
+ 				    <span id='level' class='col-sm-2'>{{ water_temp }}</span>
+ 				    <span class='col-sm-3 ice'>{{ ice }}</span> 
+ 				</div>
+
+ 			</div>
+		
+		</div>
+	</div>
+ 		{% endblock %}
+</body>
+</html>

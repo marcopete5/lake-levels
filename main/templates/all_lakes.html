@@ -1,0 +1,104 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		
+	</title>
+
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+	<link rel="stylesheet" type="text/css" href="{% static 'base.css' %} ">
+
+</head>
+<body>
+
+	<div class="container">
+
+		<div class="row">
+			<div class="col-sm-12 top">
+				<h1>Lake Levels</h1>
+			</div>
+		</div>
+
+
+		<div class="row">
+			<div class="col-sm-2">
+				<ul class="lake">
+					<a href='/antelope-island-state-park'>Antelope Island</a>
+						
+					</ul>
+				<ul class="lake">
+					<a href="/bear-lake"> Bear Lake</a>
+						</ul>
+				<ul class="lake">
+					<a href="/deer-creek"> Deer Creek</a></ul>
+				<ul class="lake">
+					<a href="/escalante-petrified-forest"> Escalante Petrified Forest</a></ul>
+				
+				<ul class="lake">
+					<a href="/great-salt-lake"> Great Salt Lake</a></ul>
+				<ul class="lake">
+					<a href="/gunlock"> Gunlock</a></ul>
+				<ul class="lake">
+					<a href="/hyrum"> Hyrum</a></ul>
+				<ul class="lake">
+					<a href="/jordanelle"> Jordanelle</a></ul>
+			
+				<ul class="lake">
+					<a href="/otter-creek"> Otter Creek</a></ul>
+				<ul class="lake">
+					<a href="/palisade"> Palisade</a></ul>
+				<ul class="lake">
+					<a href="/piute"> Piute</a></ul>
+				<ul class="lake">
+					<a href="/quail-creek"> Quail Creek</a></ul>
+			
+				<ul class="lake">
+					<a href="/red-fleet"> Red Fleet</a></ul>
+				<ul class="lake">
+					<a href="/rockport"> Rockport</a></ul>
+				<ul class="lake">
+					<a href="/sand-hollow"> Sand Hollow</a></ul>
+				<ul class="lake">
+					<a href="/starvation"> Starvation</a></ul>
+			
+				<ul class="lake">
+					<a href="/steinaker"> Steinaker</a></ul>
+				<ul class="lake">
+					<a href="/utah-lake"> Utah Lake</a></ul>
+				<ul class="lake">
+					<a href="/yuba"> Yuba</a></ul>
+			</div>
+			
+			<div class="col-sm-2">
+				
+			</div>
+			
+		
+			<div class="col-sm-8 levels">
+				{% block conditions %}
+				{% endblock %}
+					<div id="lake-list">
+					</div>
+			</div>
+		</div>
+
+
+					
+
+
+	
+
+
+
+
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+	<script type="text/javascript" src="{% static 'js/base.js' %} "></script>
+
+	
+</body>
+
+
+</html>

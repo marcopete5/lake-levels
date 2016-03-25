@@ -1,3 +1,33 @@
+
+.close-icon {
+	margin-top: -99px;
+    margin-left: 842px;
+    border: 1px solid transparent;
+    background-color: transparent;
+    vertical-align: middle;
+    cursor: pointer;
+}
+.close-icon:after {
+	content: "X";
+    display: block;
+    width: 18px;
+    height: 18px;
+    position: initial;
+    background-color: #050505;
+    padding: 2px;
+    border-radius: 50%;
+    color: white;
+    font-size: 10px;
+    box-shadow: 0 0 2px #E50F0F;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
 .lake {
 	width:250px;
 	height: 10px;
@@ -5,19 +35,45 @@
 	margin-left: -40px;
 }
 
+.sel {
+	color: #FFFFFF ;
+    text-decoration: none;
+    font-family: copperplate;
+    font-size: 12px;
+}
+
+.a {
+	color: #FFFFFF;
+}
+
+a:hover {
+	color: #DDC6C6;
+	text-decoration: none;
+}
 .levels {
 	margin-top: 50px;
 	width:60%;
 
 }
 
-.top {
-	background-color: black;
+.sidebar {
+    background: rgba(64, 64, 64, 0.73);
+    height: 831px;
 }
+.top {
+    width: 100%;
+    background-image: -webkit-gradient(linear,0 0,100% 0,from(rgba(20, 63, 70, 0.88)),to(#000));
+    z-index: 8888;
+    box-shadow: 0 0 21px black;
 
+}
+.inset {
+	    color: rgba(255, 255, 255, 0.77);
+}
 #title {
 	margin-top: -21px;
 	margin-bottom: 16px;
+	font-weight: 400;
 }
 #weather {
 	margin-bottom: 29px;
@@ -27,7 +83,8 @@
 .feeditem {
 	font-size: 20px;
 	color:white;
-	text-shadow: 2px 2px 2px black;
+	text-shadow: 1px 1px 2px black;
+	font-weight: 300;
 }
 .tempMin {
 	margin-left: 0px;
@@ -35,35 +92,68 @@
 
 .pos {
 	
-	font-size: 18px;
+	font-size: 19px;
+	font-family: "Roboto";
+	font-weight: 100;
 }
 #min {
-	margin-left: 8px;
-    margin-right: 27px;
+	margin-left: -54px;
+    margin-right: -66px;
     text-align: center;
 }
 #max {
-	margin-right: 41px;
+	margin-right: -53px;
 	text-align: center;
 }
 #temp {
-	margin-right: 34px;
+	margin-right: -19px;
 	text-align: center;
 
 }
+.temp {
+	font-size: 17px;
+}
 #level {
-	margin-right: 15px;
+	margin-right: -13px;
+	text-align: center;
+	width:201px;
+}
+#current {
+	margin-right: -21px;
 	text-align: center;
 }
-.ice {
+#wind {
+	/*margin-right: 15px;*/
 	text-align: center;
-	width: 270px;
+}
+
+.ice {
+	font-weight: 200;
+	text-align: center;
+	width: 150px;
 }
 
 .widget {
-	margin-left: -133px;
+	margin-bottom: 15px;
+	margin-left: -150px;
 	width: 900px;
     padding: 40px;
     border: 1px solid black;
     border-radius: 7px;
 }
+
+@media screen and (max-width: 2000px) and (min-width: 768px) {
+
+.col-sm-1 {
+	width: 16.3333333%;
+}
+
+.container {
+	width:1200px;
+}
+
+}
+
+
+
+

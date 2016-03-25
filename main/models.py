@@ -11,6 +11,7 @@ class Lake(models.Model):
 	latitude = models.FloatField(null=True, blank=True, editable=False)
 	longitude = models.FloatField(null=True, blank=True, editable=False)
 	slug = models.SlugField(max_length=255, unique=True, help_text='A label for URL config.')
+	image = models.ImageField()
 
 	def __str__(self):
 		return self.name

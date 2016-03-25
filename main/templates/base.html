@@ -15,36 +15,47 @@
 
 		
 		{% block conditions %}
-	
+	{% for lake in all_lakes %}
 	<div id="box">
- 		<div id="conditions-widget-3" class="widget parkConditions" style="background:url( {% static 'lake.jpg' %} );">
+	 			
+ 		<div id="{{ lake.slug }}" class="widget parkConditions" style="background:url( /media/{{ lake.image }} );box-shadow: inset 0 0 0 1000px rgba(128, 128, 128, 0.36);">
+ 			<button class="close-icon" type='reset'></button>
  			
  			<div class="conditionsResults" data-lat="41.9638" data-lng="-111.3985">
 
 				<div class="feeditem tempCur">
-					<h3 id='title'>Current Conditions </h3> <p id='weather'>{{ weather }}</p>
+						
+							
+					<h3 id='title'>Current Conditions - {{ lake.name }} </h3> <p id='weather'> {{ lake.weather }}</p>
 				</div>
-
+						
  				<div class="feeditem tempMin row">
  					<span id="min" class='col-sm-1 pos '><u>Low</u></span>  
  					<span id="max" class='col-sm-1 pos '><u>High</u></span> 
- 					<span id='temp' class='col-sm-2 pos '><u>Water Temp</u></span> 
- 					<span id='level' class='col-sm-2 pos '><u>Water Level</u></span>
- 					<span class='col-sm-3  ice pos'><u>Ice Conditions / Thickness</u></span>
+ 					<span id='current' class='col-sm-1 pos '><u>Current</u></span>
+ 					<span id='temp' class='col-sm-1 pos  '><u>Water Temp</u></span> 
+ 					<span id='level' class='col-sm-1 pos '><u>Water Level</u></span>
+ 					<span id='wind' class='col-sm-1 pos '><u>Wind Speed</u></span>
+ 					<span class='col-sm-2  ice pos'><u>Ice Conditions</u></span>
  				</div>
 
  				<div class="feeditem tempMax row" style="margin-left:0px;">
- 					<span id="min" class='col-sm-1 '> {{ min_temp }}</span>
- 				    <span id="max" class='col-sm-1'> {{ max_temp }}</span> 
- 				    <span id='temp' class='col-sm-2'>{{ water_level }}</span> 
- 				    <span id='level' class='col-sm-2'>{{ water_temp }}</span>
- 				    <span class='col-sm-3 ice'>{{ ice }}</span> 
+ 					<span id="min" class='col-sm-1 pos '> {{ lake.min_temp }}</span>
+ 				    <span id="max" class='col-sm-1 pos'> {{ lake.max_temp }}</span> 
+ 				    <span id='current' class="col-sm-1 pos">{{ lake.current_temp }}</span>
+ 				    <span id='temp' class='col-sm-1 pos '>{{ lake.water_temp }}</span> 
+ 				    <span id='level' class='col-sm-1 pos temp'>{{ lake.water_level }}</span>
+ 				    <span id='wind' class='col-sm-1 pos'> {{ lake.wind }}</span>
+ 				    <span class='col-sm-2 ice'>{{ lake.ice }}</span> 
+
  				</div>
+
 
  			</div>
 		
 		</div>
-	</div>
+	
+	</div>{% endfor %}
  		{% endblock %}
 </body>
 </html>

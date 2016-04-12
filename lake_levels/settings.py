@@ -19,13 +19,11 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.9/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'teps5lnk6z%y#x(x&w&3p^3_!_lbx(n!8a4cjuk_+qhg!9%_5@'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -78,12 +76,6 @@ WSGI_APPLICATION = 'lake_levels.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.9/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        
-    }
-}
 
 
 # Password validation
@@ -110,7 +102,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'US/Mountain'
 
 USE_I18N = True
 
@@ -123,14 +115,22 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+CRISPY_TEMPLATE_PACK = 'bootstrap3'
 
 try:
     from local_settings import *
 except Exception as e:
     pass
 
-CRISPY_TEMPLATE_PACK = 'bootstrap3'
+try:
+    from server_settings import *
+except Exception as e:
+    pass
+
+
 

@@ -3,7 +3,6 @@ django-crispy-forms==1.6.0
 lxml==3.5.0
 pbr==1.8.1
 psycopg2==2.6.1
-py-mysql2pgsql==0.1.5
 PyYAML==3.11
 requests==2.9.1
 six==1.10.0

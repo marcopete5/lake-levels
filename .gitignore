@@ -7,3 +7,4 @@ staticfiles/
 *.orig
 temporary.txt
 mysql2pgsql.yml
+server_settings.py
